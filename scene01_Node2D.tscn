@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://PNG/Tiles/Blue tiles/tileBlue_05.png" type="Texture" id=2]
+[ext_resource path="res://PNG/Tiles/Blue tiles/tileBlue_15.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.4721, 32.1888 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32.1062, 31.3561 )
+
+[node name="scene01_Node2D" type="Node2D"]
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 55.5334, 625.667 )
+
+[node name="ground_00" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 638.499, 685.71 )
+scale = Vector2( 19.9724, 1 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ground_00"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground_00/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="groundup_00" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 402.056, 506.646 )
+scale = Vector2( 1.4572, 1 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="groundup_00"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="groundup_00/StaticBody2D"]
+shape = SubResource( 2 )
